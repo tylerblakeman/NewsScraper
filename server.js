@@ -1,8 +1,9 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
+var mongoose = require("mongoose");
 
 //setting port for environment or port 3000 - locally will run on port 3000
-var PORT = 3004;
+var PORT = process.env.PORT || 3004;
 
 // Require all models
 // var db = require("./models");
