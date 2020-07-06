@@ -5,11 +5,11 @@ var mongoose = require("mongoose");
 //setting port for environment or port 3000 - locally will run on port 3000
 var PORT = process.env.PORT || 3004;
 
-// Require all models
-// var db = require("./models");
-
 //initializing express
 var app = express();
+
+// Connect to the Mongo DB
+mongoose.connect("mongodb://localhost/scraper_homework", { useNewUrlParser: true });
 
 //requiring the routes folder
 require('./routes/apiRoutes.js')(app)

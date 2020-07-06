@@ -18,10 +18,6 @@ var ArticleSchema = new Schema({
   img: {
     type: String,
     required: true
-  },
-  summary: {
-    type: String,
-    required: true
   }
 });
 
