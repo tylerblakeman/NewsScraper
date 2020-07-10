@@ -1,6 +1,7 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
 var mongoose = require("mongoose");
+var path = require('path');
 
 //setting port for environment or port 3000 - locally will run on port 3000
 var PORT = process.env.PORT || 3004;
@@ -16,8 +17,8 @@ require('./routes/apiRoutes.js')(app)
 require('./routes/htmlRoutes.js')(app)
 
 //setting view engine to express-handlebars
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
