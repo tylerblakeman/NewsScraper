@@ -1,13 +1,13 @@
 // Require all models
 var path = require('path')
-var db = require('../models/Article');
+var db = require('../models/');
 
 
 var cheerio = require("cheerio");
 var axios = require("axios");
 
 
-// const { Article } = require("../models/");
+const { Article } = require("../models/");
 
 module.exports = function (app) {
   app.get("/delete", function (req, res){
