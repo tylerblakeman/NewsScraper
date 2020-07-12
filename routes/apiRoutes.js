@@ -1,6 +1,6 @@
 // Require all models
 var path = require('path')
-var db = require("../models/");
+var db = require('../models/Article');
 
 
 var cheerio = require("cheerio");
