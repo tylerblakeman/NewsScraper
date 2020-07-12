@@ -1,12 +1,16 @@
 <div class="row">
-  <h2>Idex</h2>
   {{#each articles}}
-  <div href={{this.link}}>
-    <img src={{this.img}} alt="" class="preview">
-    <h5 class='title'>
-      {{this.title}}
-    </h5>
-    <a href="" class="summary">{{this.summary}}</a>
+
+  <div class="col-4 p-2">
+    <div class="p-2 border">
+    <a href={{this.link}}>
+    <img src={{this.img}} alt="" class="img-fluid" alt="Responsive image">
+    </a>
+    <h1 href={{this.link}}><h5 class='title' href=>
+      {{this.title}}</h5>
+      </h1>
+    <a class="summary">{{this.summary}}</a>
+    </div>
   </div>
   {{/each}}
 </div>

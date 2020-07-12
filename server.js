@@ -1,7 +1,6 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
 var mongoose = require("mongoose");
-var path = require('path');
 
 //setting port for environment or port 3000 - locally will run on port 3000
 var PORT = process.env.PORT || 3004;
@@ -10,7 +9,10 @@ var PORT = process.env.PORT || 3004;
 var app = express();
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/scraper_homework", { useNewUrlParser: true });
+
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper_homework";
+mongoose.connect(MONGODB_URI);
+
 
 //requiring the routes folder
 require('./routes/apiRoutes.js')(app)
