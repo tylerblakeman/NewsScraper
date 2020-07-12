@@ -1,9 +1,11 @@
+// Require all models
+var db = require("../models/");
+
+
 var cheerio = require("cheerio");
 var axios = require("axios");
 
 
-// Require all models
-var db = require("../models/");
 // const { Article } = require("../models/");
 
 module.exports = function (app) {
