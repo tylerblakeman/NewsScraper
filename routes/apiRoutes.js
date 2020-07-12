@@ -4,7 +4,7 @@ var axios = require("axios");
 
 // Require all models
 var db = require("../models/");
-const { Article } = require("../models/");
+// const { Article } = require("../models/");
 
 module.exports = function (app) {
   app.get("/delete", function (req, res){
