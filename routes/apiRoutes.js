@@ -8,16 +8,24 @@ var axios = require("axios");
 
 // console.log('something')
 const { Article } = require("../models");
+const { appendFile } = require('fs');
 
 module.exports = function (app) {
   app.get("/delete", function (req, res){
     db.Article.deleteMany({}).then(function (){
       console.log('delete route hit')
     }).then(async function (){
-      await res.redirect('/scrape')
+      await res.redirect('/')
     })
   });
 
+  app.get('/rebuild', function (req, res){
+    db.Article.deleteMany({}).then(function (){
+      console.log('rebuild route hit')
+    }).then(async function (){
+      await res.redirect('/scrape')
+    })
+  })
 
 	app.get("/scrape", function (req, res) {
     console.log("Scraping");
